@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\daniilda\\Desktop\\Git\\OOP_78Lab\\OOP_78Lab\\OOP_78Lab.csproj": {}
+    "C:\\Users\\daniilda\\Desktop\\Git\\term2oop\\OOP_78Lab\\OOP_78Lab\\OOP_78Lab.csproj": {}
   },
   "projects": {
-    "C:\\Users\\daniilda\\Desktop\\Git\\OOP_78Lab\\OOP_78Lab\\OOP_78Lab.csproj": {
+    "C:\\Users\\daniilda\\Desktop\\Git\\term2oop\\OOP_78Lab\\OOP_78Lab\\OOP_78Lab.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\daniilda\\Desktop\\Git\\OOP_78Lab\\OOP_78Lab\\OOP_78Lab.csproj",
+        "projectUniqueName": "C:\\Users\\daniilda\\Desktop\\Git\\term2oop\\OOP_78Lab\\OOP_78Lab\\OOP_78Lab.csproj",
         "projectName": "OOP_78Lab",
-        "projectPath": "C:\\Users\\daniilda\\Desktop\\Git\\OOP_78Lab\\OOP_78Lab\\OOP_78Lab.csproj",
+        "projectPath": "C:\\Users\\daniilda\\Desktop\\Git\\term2oop\\OOP_78Lab\\OOP_78Lab\\OOP_78Lab.csproj",
         "packagesPath": "C:\\Users\\daniilda\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\daniilda\\Desktop\\Git\\OOP_78Lab\\OOP_78Lab\\obj\\",
+        "outputPath": "C:\\Users\\daniilda\\Desktop\\Git\\term2oop\\OOP_78Lab\\OOP_78Lab\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -43,6 +43,12 @@
       "frameworks": {
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

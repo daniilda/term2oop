@@ -6,7 +6,15 @@
         xmlns:local="clr-namespace:OOP_78Lab"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <local:MainWindowVm/>
+    </Window.DataContext>
     <Grid>
+        <StackPanel HorizontalAlignment="Left" Height="142" Margin="556,10,0,0" VerticalAlignment="Top" Width="234">
+            <Button Content="{Binding Testtext}" Command="{Binding Request}" Margin="10" Height="51" Width="221"/>
+            <Button Content="Button" Margin="10" Height="51" Width="221"/>
+        </StackPanel>
+        <DataGrid Margin="10,10,253,10"/>
 
     </Grid>
 </Window>

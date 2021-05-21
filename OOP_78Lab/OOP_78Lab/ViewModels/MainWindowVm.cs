@@ -13,43 +13,21 @@ namespace OOP_78Lab
     {
 
         #region Private Properties
-        
+
+        private static DbConnection connection;
 
         #endregion
 
         #region Public Properties
 
-        private List<Shape> _canvChildren;
-        public List<Shape> CanvChildren
-        {
-            get => _canvChildren;
-            set
-            {
-                _canvChildren = value;
-                OnPropertyChanged();
-            } 
-        }
+        private string testtext;
 
-
-        private Canvas _canv;
-        public Canvas Canv
+        public string Testtext
         {
-            get => _canv;
+            get => testtext;
             set
             {
-                _canv = value;
-                OnPropertyChanged();
-            }
-        }
-        
-        
-        private string _info;
-        public string Info
-        {
-            get => _info;
-            set
-            {
-                _info = value;
+                testtext = value;
                 OnPropertyChanged();
             }
         }
@@ -59,13 +37,20 @@ namespace OOP_78Lab
 
         #region Controllers
         
-        private Controller _create;
-        public Controller Create
+        private Controller _request;
+        public Controller Request
         {
             get
             {
-                return _create ??
-                       (_create = new Controller(obj => {}
+                return _request ??
+                       (_request = new Controller(async obj =>
+                           {
+                               if (await connection.test())
+                               {
+                                   Testtext = "Connected";
+                               }
+                               Testtext = "NotConnected";
+                           }
                        ));
             }
         }
@@ -75,7 +60,7 @@ namespace OOP_78Lab
 
         public MainWindowVm()
         {
-
+            connection = new DbConnection();
         }
 
 
