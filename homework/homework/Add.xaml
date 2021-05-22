@@ -1,0 +1,49 @@
+﻿<Window x:Class="homework.Add"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:homework"
+        mc:Ignorable="d"
+        Title="Добавить автобус"  WindowStartupLocation="CenterScreen" Width="429" Height="300" ResizeMode="CanMinimize" Activated="Window_Activated">
+    <Grid>
+        <TextBox HorizontalAlignment="Left" Name="Num" Height="20" Margin="79,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" AutomationProperties.HelpText="Номер автобуса" InputScope="Number">
+            <TextBox.Text>
+                <Binding Path="Num">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox x:Name="name" HorizontalAlignment="Left" Height="20" Margin="79,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" InputScope="PersonalFullName" AutomationProperties.HelpText="Фамилия инициалы водителя">
+            <TextBox.Text>
+                <Binding Path="DriverName">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox x:Name="route" HorizontalAlignment="Left" Height="20" Margin="79,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263">
+            <TextBox.Text>
+                <Binding Path="Route">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <ComboBox x:Name="status" HorizontalAlignment="Left" Height="22" Margin="79,172,0,0" VerticalAlignment="Top" Width="263" SelectedIndex="0">
+            <ComboBoxItem Content="В парке"/>
+            <ComboBoxItem Content="Вне парка"/>
+            <ComboBoxItem Content="На маршруте"/>
+        </ComboBox>
+        <Button Content="Отмена" HorizontalAlignment="Left" Height="46" Margin="79,212,0,0" VerticalAlignment="Top" Width="113" Click="Button_Click_1"/>
+        <Button Content="Добавить" HorizontalAlignment="Left" Height="46" Margin="229,212,0,0" VerticalAlignment="Top" Width="113" Click="Button_Click"/>
+        <Label Content="Номер автобуса" HorizontalAlignment="Left" Height="30" Margin="79,10,0,0" VerticalAlignment="Top" Width="263"/>
+        <Label Content="ФИО Водителя" HorizontalAlignment="Left" Height="30" Margin="79,65,0,0" VerticalAlignment="Top" Width="263"/>
+        <Label Content="Номер маршрута" HorizontalAlignment="Left" Height="30" Margin="79,117,0,0" VerticalAlignment="Top" Width="263"/>
+
+    </Grid>
+</Window>

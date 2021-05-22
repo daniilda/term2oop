@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace homework.Models
 {
@@ -14,11 +15,32 @@ namespace homework.Models
 
         #region Public Properties
 
-        private List<Bus> _buspark;
-        public List<Bus> Buspark
+        private LinkedList<Bus> _buspark;
+        public LinkedList<Bus> Buspark
         {
             get => _buspark;
             private set => _buspark = value;
+        }
+        
+        public LinkedList<Bus> OutPark
+        { 
+            get
+            {
+                var list = new LinkedList<Bus>();
+                list = _buspark.FindAll(delegate(Bus bs) { return bs.Status >= 1; });
+                return list;
+            }
+        }
+        
+
+        public LinkedList<Bus> InPark
+        {
+            get
+            {
+                var list = new LinkedList<Bus>();
+                list = _buspark.FindAll(delegate(Bus bs) { return bs.Status == 0; });
+                return list;
+            }
         }
         
         
@@ -26,7 +48,51 @@ namespace homework.Models
 
         #region Public Methods
 
-        public byte Edit(Bus old,Bus edited)
+        public void ReadFromFile()
+        {
+            string path = @"../../buspark.txt";
+            if (!File.Exists(path))
+            {
+                return;
+            }
+            var rowdata = File.ReadAllLines(path);
+            
+            Buspark.Clear();
+            for(var i=0 ; i<rowdata.Length ; i++)
+            {
+                string[] line = rowdata[i].Split(' ');
+                if (line[2] == "-1")
+                {
+                    Bus bus;
+                    bus = new Bus(int.Parse(line[0]), line[1], null, byte.Parse(line[3]));
+                    Buspark.Add(bus);
+                }
+                else
+                {
+                    Bus bus;
+                    bus = new Bus(int.Parse(line[0]), line[1], int.Parse(line[2]), byte.Parse(line[3]));
+                    Buspark.Add(bus);
+                }
+            }
+            
+        }
+
+        public void WriteToFile()
+        {
+            string path = @"../../buspark.txt";
+            var list = Buspark.ToList();
+            string[] lines = new string[list.Count];
+            for (var i = 0; i < list.Count; i++)
+            {
+                if (list[i].Route == null)
+                    lines[i]=$"{list[i].Num} {list[i].DriverName} -1 {list[i].Status}";
+                else
+                    lines[i]=$"{list[i].Num} {list[i].DriverName} {list[i].Route} {list[i].Status}";
+            }
+            File.WriteAllLines(path, lines);
+        }
+        
+        public byte Edit(Bus old,Bus edited) 
         {
             if ((edited.Num != old.Num) && _busnumbers.Contains(edited.Num))
             {
@@ -51,28 +117,29 @@ namespace homework.Models
                 return 1;
             }
             var bus = new Bus(num, name, route, status);
+            _busnumbers.Add(num);
+            Buspark.Add(bus);
             return 0;
         }
 
-        public List<Bus> OutPark()
+        public bool CheckNum(int num)
         {
-            var list = new List<Bus>();
-            list = _buspark.FindAll(delegate(Bus bs)
-            {
-                return bs.Status == 1;
-            });
-            return list;
+            return _busnumbers.Contains(num);
         }
 
-        public List<Bus> InPark()
+        public int Lastnum()
         {
-            var list = new List<Bus>();
-            list = _buspark.FindAll(delegate(Bus bs)
-            {
-                return bs.Status == 0;
-            });
-            return list;
+            
+            _busnumbers.Sort();
+            if (_busnumbers.Count == 0)
+                return 0;
+            return _busnumbers[_busnumbers.Count - 1] + 1;
+
         }
+
+      
+
+        
         
         #endregion
 
@@ -81,7 +148,7 @@ namespace homework.Models
         public BusPark()
         {
             
-            _buspark = new List<Bus>();
+            _buspark = new LinkedList<Bus>();
             _busnumbers = new List<int>();
 
         }

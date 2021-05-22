@@ -20,4 +20,7 @@ C:\Users\daniilda\Desktop\Git\term2oop\homework\homework\obj\Debug\net5.0-window
 C:\Users\daniilda\Desktop\Git\term2oop\homework\homework\obj\Debug\net5.0-windows\ref\homework.dll
 C:\Users\daniilda\Desktop\Git\term2oop\homework\homework\obj\Debug\net5.0-windows\homework.pdb
 C:\Users\daniilda\Desktop\Git\term2oop\homework\homework\obj\Debug\net5.0-windows\homework.genruntimeconfig.cache
-C:\Users\daniilda\Desktop\Git\term2oop\homework\homework\obj\Debug\net5.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\daniilda\Desktop\Git\term2oop\homework\homework\obj\Debug\net5.0-windows\Add.g.cs
+C:\Users\daniilda\Desktop\Git\term2oop\homework\homework\obj\Debug\net5.0-windows\Add.baml
+C:\Users\daniilda\Desktop\Git\term2oop\homework\homework\obj\Debug\net5.0-windows\edit.g.cs
+C:\Users\daniilda\Desktop\Git\term2oop\homework\homework\obj\Debug\net5.0-windows\edit.baml
