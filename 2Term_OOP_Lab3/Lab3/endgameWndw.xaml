@@ -1,0 +1,18 @@
+﻿<Window x:Class="Lab3.endgameWndw"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab3"
+        xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+        mc:Ignorable="d"
+        fw:AcrylicWindow.Enabled="True"
+        fw:AcrylicWindow.AcrylicWindowStyle="NoIcon"
+        Title="К - Н: " Height="300.658" Width="407.816" Icon="logo.png" ResizeMode="CanMinimize" WindowStartupLocation="Manual">
+    <Grid fw:PointerTracker.Enabled="True">
+        <Button Name ="cont" Content="Продолжить" HorizontalAlignment="Left" Margin="118,214,0,0" VerticalAlignment="Top" Width="149" Height="35" Click="Button_Click" Cursor="Hand" Style="{StaticResource ButtonRevealStyle}"/>
+        <TextBlock Name ="PlayerName"  HorizontalAlignment="Left" Margin="57,32,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="79" Width="286" FontSize="48" TextAlignment="Center" FontWeight="Bold" FontFamily="Tahoma"/>
+        <TextBlock Name ="Status" HorizontalAlignment="Left" Margin="57,111,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="79" Width="286" FontSize="48" TextAlignment="Center" FontWeight="Bold" FontFamily="Tahoma"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,8 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
+  &lt;Assembly Path="C:\Users\danii\OneDrive\Рабочий стол\Git\OOP\2Term_OOP_Lab4b\2Term_OOP_Lab4\packages\Grapecity.DataVisualization.0.1.248\lib\net462\Grapecity.DataVisualization.dll" /&gt;&#xD;
+&lt;/AssemblyExplorer&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=746909c8_002D34f9_002D4c2e_002Dac2b_002Daa6f659cedda/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from &amp;lt;FirstTest&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Project Location="C:\Users\danii\OneDrive\Рабочий стол\Git\OOP\2Term_OOP_Lab4b\2Term_OOP_Lab4\FirstTest" Presentation="&amp;lt;FirstTest&amp;gt;" /&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=canv/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>

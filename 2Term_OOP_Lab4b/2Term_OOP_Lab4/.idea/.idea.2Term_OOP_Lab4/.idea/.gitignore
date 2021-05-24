@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/modules.xml
+/projectSettingsUpdater.xml
+/.idea.2Term_OOP_Lab4.iml
+/contentModel.xml
+# Datasource local storage ignored files
+/../../../../../../../../../../../../:\Users\danii\OneDrive\Рабочий стол\Git\OOP\2Term_OOP_Lab4b\2Term_OOP_Lab4\.idea\.idea.2Term_OOP_Lab4\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/

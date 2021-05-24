@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>ООП_Лаб1_КузнецовДА_БИВТ_20_7</RootNamespace>
+  </PropertyGroup>
+
+</Project>

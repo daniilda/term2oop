@@ -1,0 +1,30 @@
+﻿<Window x:Class="_2Term_OOP_Lab5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_2Term_OOP_Lab5"
+        xmlns:viewModels="clr-namespace:_2Term_OOP_Lab5"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="403.557" Width="496.603">
+    <Window.DataContext>
+        <viewModels:MainWindowVm/>
+    </Window.DataContext>
+    <Grid>
+        <Grid HorizontalAlignment="Left" Height="211.924" Margin="10,13.387,0,0" VerticalAlignment="Top" Width="220.075" Background="#FFF8D4D4">
+            <TextBox HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="{Binding FirstBankAccount}" Width="220.075"/>
+            <ComboBox SelectedIndex="{Binding SelectedCurrencyFBA}" ItemsSource="{Binding CurrencyList}" Height="20" Margin="0,75.962,0,115.962" IsSynchronizedWithCurrentItem="True"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="211.924" Margin="254.529,13.387,0,0" VerticalAlignment="Top" Width="220.075" Background="#FFF3C5C5">
+            <TextBox HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="{Binding SecondBankAccount}" Width="220.075"/>
+            <ComboBox SelectedIndex="{Binding SelectedCurrencySBA}" ItemsSource="{Binding CurrencyList}" Height="20" Margin="0,75.962,0,115.962"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="116.83" Margin="10,245.689,0,0" VerticalAlignment="Top" Width="464.604" Background="#FFFF9494">
+            <TextBox  HorizontalAlignment="Left" Height="16.302" Margin="32.83,40.971,0,0" TextWrapping="Wrap" Text="{Binding TransactionAmount}" VerticalAlignment="Top" Width="98.717"/>
+            <ComboBox ItemsSource="{Binding CurrencyList}" HorizontalAlignment="Left" Margin="264.679,40.971,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="{Binding SelectedCurrencyT}" />
+            <Button Content="Перечислить" Command="{Binding MakeTransaction}" Height="22.198" Margin="148.755,84.632,0,0" VerticalAlignment="Top" Width="126.792"/>
+            <RadioButton IsChecked ="{Binding TypeOfTransaction, Mode=TwoWay}" Content="Из 1 в 2" HorizontalAlignment="Left" Margin="90.791,10,0,0" VerticalAlignment="Top"/>
+            <RadioButton Content="Из 2 в 1" HorizontalAlignment="Left" Margin="204.904,10,0,0" VerticalAlignment="Top"/>
+        </Grid>
+    </Grid>
+</Window>

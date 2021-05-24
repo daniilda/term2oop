@@ -1,0 +1,36 @@
+﻿<Window x:Class="_2Term_OOP_Lab4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_2Term_OOP_Lab4"
+        xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+        xmlns:vm ="clr-namespace:_2Term_OOP_Lab4"
+        mc:Ignorable="d"
+        Title="{Binding WindowTitle}" Height="800" Width="800"
+        fw:AcrylicWindow.Enabled="True"
+        fw:AcrylicWindow.AcrylicWindowStyle="NoIcon"
+        fw:AcrylicWindow.TintColor="CadetBlue"
+        fw:AcrylicWindow.FallbackColor="DarkSlateGray" ResizeMode="CanMinimize">
+    <Window.DataContext>
+        <vm:MainWindowVm/>
+    </Window.DataContext>
+
+    <Grid fw:PointerTracker.Enabled="True">
+        <Button Content="Выбрать файл"  Margin="44,657,598,73" Height="40" Width="150" Command="{Binding OpenFile}" Style="{StaticResource ButtonRevealStyle}"/>
+        <Button Content="Построить" Command="{Binding CreateNewGraph}" Height="40" Width="150" Margin="44,522,598.453,207.811" Click="Button_Click" Style="{StaticResource ButtonRevealStyle}" />
+        <Button Content="Считать" Command="{Binding ReadGraph}"  Width="150" Height="40" Margin="44,567,598.453,162.811" TextOptions.TextFormattingMode="Display" Style="{StaticResource ButtonRevealStyle}"/>
+        <Button Content="Таймер Старт\Стоп" Command="{Binding TimerControl}"  Height="40" Width="150" Margin="44,477,598.453,252.811" Style="{StaticResource ButtonRevealStyle}"/>
+        <Button Content="Записать"  Command="{Binding RecordNewGraph}" Height="40" Width="150" Margin="44,612,598.453,117.811" Style="{StaticResource ButtonRevealStyle}"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding PathOut}" VerticalAlignment="Top" Margin="251,657,0,0" Height="40" Width="499" Background="{x:Static fw:AccentColors.ImmersiveSystemAccentBrush}" FontSize="30" LineHeight="8"/>
+        <TextBox HorizontalAlignment="Left" Height="40" Width="150" Margin="44,429,598.453,0" TextWrapping="Wrap" Text="{Binding Time}" VerticalAlignment="Top" Style="{StaticResource TextBoxRevealStyle}" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" Margin="44,335,0,0" TextWrapping="Wrap" Text="{Binding Timer}" VerticalAlignment="Top" Height="94" Width="150" FontSize="72" TextAlignment="Center" LineHeight="6"/>
+        <Canvas Width="10" Height="10">
+            <ContentPresenter Content="{Binding Board}" Canvas.Left="-130" Canvas.Top="-330"/>
+        </Canvas>
+
+
+
+    </Grid>
+</Window>
+
