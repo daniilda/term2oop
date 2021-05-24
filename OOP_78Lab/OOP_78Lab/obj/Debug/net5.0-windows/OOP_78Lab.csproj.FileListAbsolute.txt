@@ -37,4 +37,3 @@ C:\Users\daniilda\Desktop\Git\term2oop\OOP_78Lab\OOP_78Lab\obj\Debug\net5.0-wind
 C:\Users\daniilda\Desktop\Git\term2oop\OOP_78Lab\OOP_78Lab\obj\Debug\net5.0-windows\ref\OOP_78Lab.dll
 C:\Users\daniilda\Desktop\Git\term2oop\OOP_78Lab\OOP_78Lab\obj\Debug\net5.0-windows\OOP_78Lab.pdb
 C:\Users\daniilda\Desktop\Git\term2oop\OOP_78Lab\OOP_78Lab\obj\Debug\net5.0-windows\OOP_78Lab.genruntimeconfig.cache
-C:\Users\daniilda\Desktop\Git\term2oop\OOP_78Lab\OOP_78Lab\obj\Debug\net5.0-windows\GeneratedInternalTypeHelper.g.cs

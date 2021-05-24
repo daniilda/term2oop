@@ -6,15 +6,62 @@
         xmlns:local="clr-namespace:OOP_78Lab"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Window.DataContext>
-        <local:MainWindowVm/>
-    </Window.DataContext>
     <Grid>
-        <StackPanel HorizontalAlignment="Left" Height="142" Margin="556,10,0,0" VerticalAlignment="Top" Width="234">
-            <Button Content="{Binding Testtext}" Command="{Binding Request}" Margin="10" Height="51" Width="221"/>
-            <Button Content="Button" Margin="10" Height="51" Width="221"/>
+        <StackPanel HorizontalAlignment="Left" Height="216" Margin="627,38,0,0" VerticalAlignment="Top" Width="163">
+            <Button x:Name="Request" Content="Запрос из интернета" Command="" Margin="10" Height="51" Width="126" Click="Button_Click"/>
+            <Button x:Name="Save" Content="Сохранить в БД" Margin="10" Height="51" Width="124" Click="Save_Click"/>
+            <Button x:Name="Load" Content="Загрузить" Height="51" Width="124" Click="Load_Click"/>
         </StackPanel>
-        <DataGrid Margin="10,10,253,10"/>
+        <TabControl Margin="10,10,173,10">
+            <TabItem Header="Чистая XML разметка">
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="14*"/>
+                        <ColumnDefinition Width="37*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="raw" HorizontalAlignment="Left" Text="Пустенько, да?" TextWrapping="Wrap" VerticalAlignment="Center" Width="591" Height="365" Grid.ColumnSpan="2" Margin="10,0,0,0"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Список новостей">
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,1">
+                    <ListView x:Name="edited" SelectionMode="Single" >
+                        <ListView.View>
+                            <GridView >
+                                <GridViewColumn Width="90" Header="Дата">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock TextWrapping="Wrap" Text="{Binding Path=Time}" />
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Width="150" Header="Название статьи">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock TextWrapping="Wrap" Text="{Binding Path=Title}" />
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Width="200" Header="Описание">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock TextWrapping="Wrap" Text="{Binding Path=Desctiprion}" />
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Width="100" Header="Ссылка">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock TextWrapping="Wrap" Text="{Binding Path=Url}" />
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
 
     </Grid>
 </Window>
